@@ -1,3 +1,22 @@
 <ion-content>
-  <h1>Hola es</h1>
+
+  <ion-list>
+    <ion-item *ngFor="let item of estudiantes">
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.nombres}} - {{item.apellidos}}</h2>
+        <p>{{item.cedula}}</p>
+        <p>{{item.fechaNacimiento}}</p>
+        <p>{{item.email}}</p>
+        <p>{{item.telefono}}</p>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  
+
+
+
 </ion-content>
