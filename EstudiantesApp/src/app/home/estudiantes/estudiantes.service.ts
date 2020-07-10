@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,12 +7,14 @@ export class EstudiantesService {
 
   constructor(private httpClient: HttpClient) { }
 
-getEstudiantes(){
+  getEstudiantes() {
+    const url = "https://cedesistemas-app-api.azurewebsites.net/api/Estudiantes";
+    return this.httpClient.get(url);
+  }
 
-const url="https://cedesistemas-app-api.azurewebsites.net/api/Estudiantes";
-return this.httpClient.get(url);
-
-
-}
+  deleteEstudiante(id) {
+    const url = "https://cedesistemas-app-api.azurewebsites.net/api/Estudiantes/" + id;
+    return this.httpClient.delete(url);
+  }
 
 }

@@ -1,21 +1,45 @@
+<ion-header>
+  <ion-searchbar showCancelButton="focus" (ionInput)="search($event)" (ionCancel)="search($event)"></ion-searchbar>
+</ion-header>
+
 <ion-content>
-
   <ion-list>
-    <ion-item *ngFor="let item of estudiantes">
-      <ion-avatar slot="start">
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-      </ion-avatar>
-      <ion-label>
-        <h2>{{item.nombres}} - {{item.apellidos}}</h2>
-        <p>{{item.cedula}}</p>
-        <p>{{item.fechaNacimiento}}</p>
-        <p>{{item.email}}</p>
-        <p>{{item.telefono}}</p>
 
-      </ion-label>
-    </ion-item>
+
+
+
+
+    <ion-item-sliding *ngFor="let item of estudiantes">
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{item.nombres}} - {{item.apellidos}}</h2>
+          <p>{{item.cedula}}</p>
+          <p>
+            <ion-icon name="calendar-outline"></ion-icon>
+            {{item.fechaNacimiento}}</p>
+          <p>
+            <ion-icon name="mail-unread-outline"></ion-icon>
+            {{item.email}}</p>
+          <p>
+            <ion-icon name="call-outline"></ion-icon>
+            {{item.telefono}}</p>
+        </ion-label>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="delete(item.id)">Elminar</ion-item-option>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+
   </ion-list>
-  
+
 
 
 
