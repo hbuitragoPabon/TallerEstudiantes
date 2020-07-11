@@ -17,7 +17,14 @@ const routes: Routes = [
     children:[
       {
         path: "estudiantes",
-        component: EstudiantesComponent
+        // component: EstudiantesComponent
+        children:[
+          {
+            path:'',
+            loadChildren: () => import('./estudiantes/estudiantes.module').then((m)=>m.EstudiantesModule)
+          }
+        ]
+
       },
       {
         path: "agregar",

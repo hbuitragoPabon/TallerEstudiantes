@@ -20,7 +20,7 @@ import { HomePageRoutingModule } from './home-routing.module';
   ],
   declarations: [
     HomePage,
-    EstudiantesComponent,
+    // EstudiantesComponent,
     AgregarComponent,
     EditarComponent
   ],
