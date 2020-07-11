@@ -1,3 +1,41 @@
-<p>
-  agregar works!
-</p>
+<ion-header>    
+  <ion-title>Agregar Estudiante</ion-title>
+</ion-header>  
+
+<ion-content>
+  <ion-item>
+    <ion-input placeholder="Nombre" clearInput [(ngModel)]="nombres"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Apellidos" clearInput [(ngModel)]="apellidos"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Cedula" type="number" clearInput [(ngModel)]="cedula"></ion-input>
+  </ion-item>
+  
+  
+  <ion-item>    
+    <ion-label>Fecha nacimiento:</ion-label>
+  </ion-item>
+
+   <ion-item>    
+    <ion-input placeholder="Fecha"  clearInput [(ngModel)]="fechaNacimiento"></ion-input>
+  </ion-item> 
+
+  <ion-item>
+    <ion-input placeholder="Email" type="email" clearInput [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Telefono"  clearInput [(ngModel)]="telefono"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input placeholder="Foto"  clearInput [(ngModel)]="foto"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="guardar()">Guardar</ion-button>
+
+</ion-content>
