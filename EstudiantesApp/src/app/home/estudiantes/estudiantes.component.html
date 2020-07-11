@@ -5,11 +5,14 @@
 <ion-content>
   <ion-list>
 
-    <ion-item-sliding *ngFor="let item of estudiantes">
+    <ion-item-sliding *ngFor="let item of estudiantes" >
 
-      <ion-item>
+      <ion-item detail="true"
+      [routerLink]="['/home/tabs/estudiantes/detail', item]"
+        routerLinkActive="router-link-active"
+      >
         <ion-avatar slot="start">
-          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          <img src="{{item.foto}}">
         </ion-avatar>
         <ion-label>
           <h2>{{item.nombres}} - {{item.apellidos}}</h2>
